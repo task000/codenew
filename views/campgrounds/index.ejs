@@ -1,0 +1,124 @@
+<!--index.ejs file-->
+
+<% include ../partials/header %>    
+<!--this ../ tells that to search partials in one directory back-->
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('#button').click(function(){ 
+        if(!$('#iframe').length) {
+                $('#iframeHolder').html('<iframe id="iframe" src="https://console.dialogflow.com/api-client/demo/embedded/bc0f67d3-4fe9-4d3e-a081-11ca4f6bf6e8" width="250" height="300" style="float:right"></iframe>');
+        }
+    });   
+});
+</script>  
+ 
+<button class="btn btn-md btn-info" id="button" style="float:right">Ask Questions?</button>
+<div id="iframeHolder"></div>
+
+<a  href="https://www.facebook.com/" class="btn btn-md " role="button"  style="float:right; background:#10A2EE; text-color:none">FaceBook</a>
+<a href="https://www.instagram.com/accounts/login/?hl=en" class="btn btn-md " role="button" style="float:right;background:#FD41FF" >Insta</a>
+<a  href="https://www.youtube.com/" class="btn btn-md "  role="button" style="float:right;background:#FC0606">YouTube</a>
+
+
+
+
+
+
+
+
+    <header class="jumbotron">
+        <div class="container">
+          <h1>Welcome To WEcart!</h1>
+             <p>Only place to buy best products and add your own products to sell </p>
+              <p>
+                  <a class="btn btn-primary btn-lg" href="/campgrounds/new">
+                     Add your own products</a>
+              </p>
+        
+        </div>       
+    </header>
+    
+  
+  <div class="row text-center" style="display:flex; flex-wrap:wrap; " > 
+    <div class="col-md-12">
+        <% if( noMatch !== null) { %>
+            <h3><%= noMatch %></h3>
+            	<p>
+                  <form action="/campgrounds" method="GET" class="form-inline">
+                      <div class="form-group">
+                          <input type="text" name="search" placeholder="Search products..." class="form-control">
+                          <input type="submit" value="Search" class="btn btn-default">
+                      </div>
+                  </form>
+                  
+              </p>
+      <%  }  %>
+    </div>
+<% campgrounds.forEach(function(campground){ %>
+    <div class="col-md-3 col-sm-6">
+        <div class="thumbnail">
+          <img src="<%= campground.image %>">
+        
+        <div class="caption">
+            <h4><%= campground.name %></h4>
+        </div>
+        <p>
+            <a href="/campgrounds/<%= campground._id%>" class="btn btn-primary"> More Info</a>
+            <a href="http://www.protontech.in/images/Solutions_icon/Snapshot/2payment_gateway_banner1.PNG" class="btn btn-success"> Buy </a>
+            <a href="https://cdn.dribbble.com/users/1260892/screenshots/7151607/media/996de2cf8e7206459c808052ffa07152.gif" class="btn btn-warning"> Add To Cart</a>
+        </p>
+        </div>
+    </div>
+<% }) %> 
+
+
+
+
+<% include ../partials/footer %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
