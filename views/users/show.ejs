@@ -5,22 +5,19 @@
        <h1><%= user.firstName +" "+ user.lastName %></h1>
    <div class="thumbnail">
      
-     <img src="<%= user.avatar %>" alt="user profile image">
+     <img style=" border:1px solid black" src="<%= user.avatar %>" alt="user profile image">
      <div class="caption"><a href="mailto:<%= user.email %>"><%= user.email %></a></div>
      </div>
-     lorem isij jhbkjkvkv
-     jsdgkiugugkugu
-     cjhgkygkurygkurgkrugfkurgcjvvjcjv
-     bhvuyffrvhcvh
+     <p><%= user.description %></p>
      </div>
-     <div class="col-md-8">
-         <h3><%= user.username %>'s products</h3>
-         <ul>
+     <div class="col-md-4">
+         <h3 style="background-color:#10EEE6; margin-top:70px; border:1px solid black"><%= user.username %>'s Products</h3>
+         <ol>
              <% campgrounds.forEach(function(campground){ %>
              <li><a href="/campgrounds/<%=campground.id %>"><%=campground.name %></a></li>
              <% }) %>
              
-         </ul>
+         </ol>
      </div>
 </div> 
 
