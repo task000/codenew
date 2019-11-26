@@ -5,13 +5,13 @@
        <h1><%= user.firstName +" "+ user.lastName %></h1>
    <div class="thumbnail">
      
-     <img style=" border:1px solid black" src="<%= user.avatar %>" alt="user profile image">
+     <img style=" border-radius:5px; " src="<%= user.avatar %>" alt="user profile image">
      <div class="caption"><a href="mailto:<%= user.email %>"><%= user.email %></a></div>
      </div>
      <p><%= user.description %></p>
      </div>
      <div class="col-md-4">
-         <h3 style="background-color:#10EEE6; margin-top:70px; border:1px solid black"><%= user.username %>'s Products</h3>
+         <h3 style="background-color:#1063EE ; margin-top:70px; border-radius:5px; color:white ">List of <%= user.username %>'s Products</h3>
          <ol>
              <% campgrounds.forEach(function(campground){ %>
              <li><a href="/campgrounds/<%=campground.id %>"><%=campground.name %></a></li>
